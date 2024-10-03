@@ -7,23 +7,23 @@ import { Pond } from '../models/pond.model';
   providedIn: 'root',
 })
 export class PondService {
-  private apiUrl = 'http://localhost:8080/api/ponds'; // Update with your backend URL
+  private apiUrl = '/api/ponds';
 
   constructor(private http: HttpClient) {}
 
-  getPonds(): Observable<Pond[]> {
+  getAllPonds(): Observable<Pond[]> {
     return this.http.get<Pond[]>(this.apiUrl);
   }
 
   addPond(pond: Pond): Observable<Pond> {
-    return this.http.post<Pond>(this.apiUrl, pond);
+    return this.http.post<Pond>(`${this.apiUrl}/admin/add`, pond);
   }
 
-  updatePond(pond: Pond): Observable<Pond> {
-    return this.http.put<Pond>(`${this.apiUrl}/${pond.id}`, pond);
+  updatePond(id: string, pond: Pond): Observable<Pond> {
+    return this.http.put<Pond>(`${this.apiUrl}/admin/update/${id}`, pond);
   }
 
   deletePond(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/admin/delete/${id}`);
   }
 }

@@ -1,15 +1,39 @@
-<div>
-  <h1>Welcome to the Smart Pond Monitoring System</h1>
-  <p>Please choose an option:</p>
-  <ul>
-    <li>
-      <a routerLink="/login">User Login</a>
-    </li>
-    <li>
-      <a routerLink="/register">User Registration</a>
-    </li>
-    <li>
-      <a routerLink="/admin">Admin Login</a>
-    </li>
-  </ul>
+<div class="container">
+  <header>
+    <h1>Smart Pond Monitoring System</h1>
+    <p class="tagline">Advanced IoT-based Pond Ecosystem Management</p>
+  </header>
+
+  <section class="hero">
+    <h2>Revolutionizing Pond Management</h2>
+    <p>
+      Our innovative system offers real-time insights and control, empowering users to optimize their aquatic ecosystem management with IoT and sensor-based automation.
+    </p>
+  </section>
+
+  <section class="features">
+    <h2>Core Features</h2>
+    <div class="feature-grid">
+      <div class="feature-card" *ngFor="let feature of features">
+        <i class="fas {{ feature.icon }} feature-icon"></i>
+        <h3>{{ feature.name }}</h3>
+        <p>{{ feature.description }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="benefits">
+    <h2>Benefits</h2>
+    <ul>
+      <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+    </ul>
+  </section>
+
+  <section class="login-options">
+    <h2>Start Managing Your Pond</h2>
+    <div class="button-group">
+      <a routerLink="/login" class="btn btn-primary">User Login</a>
+      <a routerLink="/admin" class="btn btn-danger">Admin Login</a>
+    </div>
+  </section>
 </div>

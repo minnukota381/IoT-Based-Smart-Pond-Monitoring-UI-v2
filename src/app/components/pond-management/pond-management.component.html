@@ -1,13 +1,16 @@
-<h2>Pond Management</h2>
-<table>
-  <tr>
-    <th>Pond Name</th>
-    <th>Action</th>
-  </tr>
-  <tr *ngFor="let pond of ponds">
-    <td>{{ pond.name }}</td>
-    <td>
-      <!-- Add edit and delete actions here -->
-    </td>
-  </tr>
-</table>
+<form (ngSubmit)="addPond()">
+  <input type="text" [(ngModel)]="newPond.pondId" name="pondId" placeholder="Pond ID" required />
+  <input type="number" [(ngModel)]="newPond.temperature" name="temperature" placeholder="Temperature" required />
+  <input type="number" [(ngModel)]="newPond.pH" name="pH" placeholder="pH Level" required />
+  <input type="number" [(ngModel)]="newPond.rain" name="rain" placeholder="Rain" required />
+  <input type="number" [(ngModel)]="newPond.dissolvedOxygen" name="dissolvedOxygen" placeholder="Dissolved Oxygen" required />
+  <input type="number" [(ngModel)]="newPond.waterLevel" name="waterLevel" placeholder="Water Level" required />
+  <button type="submit">Add Pond</button>
+</form>
+
+<ul>
+  <li *ngFor="let pond of ponds">
+    <span>{{ pond.pondId }} - {{ pond.temperature }}°C</span>
+    <button (click)="deletePond(pond.id)">Delete</button>
+  </li>
+</ul>
