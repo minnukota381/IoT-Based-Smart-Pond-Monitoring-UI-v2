@@ -1,2 +1,18 @@
-<h2>Admin Panel</h2>
-<p>Manage users and ponds here.</p>
+<div class="login-container">
+  <h2>Admin Login</h2>
+  <form (ngSubmit)="login()">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+  </form>
+</div>
