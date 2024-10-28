@@ -18,7 +18,6 @@ import { FormsModule } from '@angular/forms';
     RegisterUserComponent,
     PondManagementComponent,
     AdminComponent,
-    OneWayBindingComponent,
   ],
   imports: [
     BrowserModule,
