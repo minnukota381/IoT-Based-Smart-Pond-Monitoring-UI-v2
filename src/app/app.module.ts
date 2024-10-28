@@ -6,8 +6,9 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginUserComponent } from './components/login-user/login-user.component';
 import { RegisterUserComponent } from './components/register-user/register-user.component';
 import { PondManagementComponent } from './components/pond-management/pond-management.component';
+import { AdminComponent } from './components/admin/admin.component'; // Import AdminComponent
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms'; // Import FormsModule here
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,14 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule here
     LoginUserComponent,
     RegisterUserComponent,
     PondManagementComponent,
+    AdminComponent,
+    OneWayBindingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, // Add FormsModule to imports
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
